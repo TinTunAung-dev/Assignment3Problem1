@@ -25,19 +25,15 @@ class MainActivity : AppCompatActivity() {
         addButton = findViewById(R.id.addButton)
         tableLayout = findViewById(R.id.tableLayout)
 
-        // Add two static rows to the table
         addStaticRow("Android Version", "Code Name")
         addStaticRow("Android 12", "Snow Cone")
 
         addButton.setOnClickListener {
-            // Get the entered values from EditText fields
             val version = editTextVersion.text.toString()
             val codeName = editTextCodeName.text.toString()
 
-            // Add a new row to the table
             addDynamicRow(version, codeName)
 
-            // Clear EditText fields
             editTextVersion.text.clear()
             editTextCodeName.text.clear()
         }
